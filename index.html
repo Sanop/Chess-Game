@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name = "viewport" content="width = device - width , initial-scale=1.0">
+        <title>Chess Game</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    </head>
+
+    <style>
+
+        body{
+            background-image: url("images/20663_ilustrasi_catur_pion_rullyaguscandra_wordpress_com_1200x627.jpg");
+        }
+
+
+        #divSuperMain{
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+
+        }
+
+        .divBlack{
+            height: 80px;
+            width: 80px;
+            background-color: #b25819;
+        }
+
+        .divWhite{
+            height: 80px;
+            width: 80px;
+            background-color: #b2a465;
+        }
+
+
+
+        .divBlack:hover{
+            background-color: #b23306;
+        }
+
+        .divWhite:hover{
+            background-color: #f1a899;
+        }
+        .chessIcons{
+            padding-top: 12px;
+            width: 50px;
+            height: 80px;
+        }
+        .selectedBox{
+            border: ridge #030a50 ;
+            background-color:#21b291;
+        }
+        .TrapBox{
+            /*border: ridge #851b13;*/
+            background-color:#ff0001;
+        }
+    </style>
+
+    <body>
+        <div class="container" id="divSuperMain">
+
+                <div class="row" id="divSub">
+                    <div class="col-md-1 text-center">
+                        8
+                    </div>
+                    <div class="divWhite col-md-1" id="a8">
+                        <img src="images/Rook%20black.png" id="RB1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackRook(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="b8">
+                        <img src="images/Knight%20black.png" id="KNB1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackKnight(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="c8">
+                        <img src="images/Bishope%20black.png" id="BB1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackBishop(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="d8">
+                        <img src="images/Queen%20black.png" id="QB" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackQueen(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="e8">
+                        <img src="images/King%20Black.png" id="KB" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackKing(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="f8">
+                        <img src="images/Bishope%20black.png" id="BB2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackBishop(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="g8">
+                        <img src="images/Knight%20black.png" id="KNB2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackKnight(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="h8">
+                        <img src="images/Rook%20black.png" id="RB2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickBlackRook(this)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="divNumbers col-md-1 text-center">
+                        7
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="a7">
+                        <img src="images/Pawn%20black.png" id="PB1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="b7">
+                        <img src="images/Pawn%20black.png" id="PB2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="c7">
+                        <img src="images/Pawn%20black.png" id="PB3" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="d7">
+                        <img src="images/Pawn%20black.png" id="PB4" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="e7">
+                        <img src="images/Pawn%20black.png" id="PB5" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="f7">
+                        <img src="images/Pawn%20black.png" id="PB6" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="g7">
+                        <img src="images/Pawn%20black.png" id="PB7" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="h7">
+                        <img src="images/Pawn%20black.png" id="PB8" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickPawn(this)">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="divNumbers col-md-1 text-center">
+                        6
+                    </div>
+
+                    <div class="divWhite col-md-1" id="a6"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="b6"></div>
+
+                    <div class="divWhite col-md-1 " id="c6"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="d6"></div>
+
+                    <div class="divWhite col-md-1" id="e6"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="f6"></div>
+
+                    <div class="divWhite col-md-1" id="g6"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="h6"></div>
+                </div>
+                <div class="row">
+                    <div class="divNumbers col-md-1 text-center">
+                        5
+                    </div>
+
+                    <div class="divBlack col-md-1" id="a5"></div>
+
+                    <div class="divWhite col-md-1 text-center" id="b5"></div>
+
+                    <div class="divBlack col-md-1" id="c5"></div>
+
+                    <div class="divWhite col-md-1 text-center" id="d5"></div>
+
+                    <div class="divBlack col-md-1" id="e5"></div>
+
+                    <div class="divWhite col-md-1 text-center" id="f5"></div>
+
+                    <div class="divBlack col-md-1" id="g5"></div>
+
+                    <div class="divWhite col-md-1 text-center" id="h5"></div>
+                </div>
+                <div class="row">
+                    <div class="divNumbers col-md-1 text-center">
+                        4
+                    </div>
+
+                    <div class="divWhite col-md-1 " id="a4"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="b4"></div>
+
+                    <div class="divWhite col-md-1 " id="c4"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="d4"></div>
+
+                    <div class="divWhite col-md-1 " id="e4"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="f4"></div>
+
+                    <div class="divWhite col-md-1 " id="g4"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="h4"></div>
+                </div>
+                <div class="row">
+                    <div class="divNumbers col-md-1 text-center">
+                        3
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="a3"></div>
+
+                    <div class="divWhite col-md-1" id="b3"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="c3"></div>
+
+                    <div class="divWhite col-md-1" id="d3"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="e3"></div>
+
+                    <div class="divWhite col-md-1" id="f3"></div>
+
+                    <div class="divBlack col-md-1 text-center" id="g3"></div>
+
+                    <div class="divWhite col-md-1" id="h3"></div>
+
+                </div>
+                <div class="row">
+                    <div class="divNumbers col-md-1 text-center">
+                        2
+                    </div>
+
+                    <div class="divWhite col-md-1 " id="a2">
+                        <img src="images/Pawn%20White.png" id="PW1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="b2">
+                        <img src="images/Pawn%20White.png" id="PW2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1 " id="c2">
+                        <img src="images/Pawn%20White.png" id="PW3" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="d2">
+                        <img src="images/Pawn%20White.png" id="PW4" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1 " id="e2">
+                        <img src="images/Pawn%20White.png" id="PW5" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="f2">
+                        <img src="images/Pawn%20White.png" id="PW6" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1 " id="g2">
+                        <img src="images/Pawn%20White.png" id="PW7" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="h2">
+                        <img src="images/Pawn%20White.png" id="PW8" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhitePawn(this)">
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="divNumbers col-md-1 text-center">
+                        1
+                    </div>
+
+
+                    <div class="divBlack col-md-1 text-center" id="a1">
+                        <img src="images/Rook%20White.png" id="RW1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteRook(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="b1">
+                        <img src="images/Knight%20White.png" id="KNW1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteKnight(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="c1">
+                        <img src="images/Bishope%20White.png" id="BW1" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteBishop(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="d1">
+                        <img src="images/Queen%20White.png" id="QW" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteQueen(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="e1">
+                        <img src="images/King%20White.png" id="KW" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteKing(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="f1">
+                        <img src="images/Bishope%20White.png" id="BW2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteBishop(this)">
+                    </div>
+
+                    <div class="divBlack col-md-1 text-center" id="g1">
+                        <img src="images/Knight%20White.png" id="KNW2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteKnight(this)">
+                    </div>
+
+                    <div class="divWhite col-md-1" id="h1">
+                        <img src="images/Rook%20White.png" id="RW2" class="chessIcons" draggable="true" ondragstart="drag(event)" onclick="clickWhiteRook(this)">
+                    </div>
+                </div>
+            <div class="col-md-1 text-center">
+                A
+            </div>
+            <div class="col-md-1 text-center">
+                B
+            </div>
+            <div class="col-md-1 text-center">
+                C
+            </div>
+            <div class="col-md-1 text-center">
+                D
+            </div>
+            <div class="col-md-1 text-center">
+                E
+            </div>
+            <div class="col-md-1 text-center">
+                F
+            </div>
+            <div class="col-md-1 text-center">
+                G
+            </div>
+            <div class="col-md-1 text-center">
+                H
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <button onclick="ReloadPage()">Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/home%20controll.js"></script>
+
+    </body>
+
+</html>
